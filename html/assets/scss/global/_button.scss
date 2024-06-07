@@ -1,0 +1,527 @@
+//input background //
+	@each $btn-name, $btn-color in (primary, var(--btn-color-one)),
+			(secondary, $secondary-color) ,
+			(success, $success-color),
+			(danger, $danger-color),
+			(info, $light-font),
+			(light, $light-gray),
+			(dark, $dark-color),
+			(warning, $warning-color) {
+		.form-bg-#{$btn-name}{
+			background:$btn-color;
+			border-color:$btn-color;
+
+			@if($btn-name == light){
+			color:$dark-color;
+			}
+			@else{
+			color:var(--white);
+			}
+			&:focus{
+			border-color:$btn-color;
+			background:$btn-color;
+			@if($btn-name == light){
+				color:$dark-color;
+			}
+			@else{
+				color:var(--white);
+			}
+			&:active{
+				border-color:$btn-color;
+				background:$btn-color;
+				@if($btn-name == light){
+				color:$dark-color;
+				}
+				@else{
+				color:var(--white);
+				}
+			}
+			}
+		}
+	}
+
+	.btn:hover{
+		background-position: right;
+	}
+	.btn.focus, .btn:focus {
+		outline: 0;
+		box-shadow:none; 
+	}
+
+	.cmn-btn0{
+		border: none;
+		padding: 7px 10px;
+		text-transform: capitalize ;
+		color: var(--primary);
+		border-radius: var(--radius-two);
+		background: rgba(var(--primary-rgb), .1);
+		border: 1px solid transparent;
+		font-size: 12px;
+		font-weight: 500 ;
+		display: inline-block ;
+		cursor: pointer;
+		
+		display: inline-block;
+		@include transition(.5s);
+
+		.icon{
+			font-size: 13px;
+			font-weight: 500;
+			position: relative;
+			left: 26px;
+			@include transition(.4s);
+		}
+		&:hover{
+			.icon{
+				left: 30px;
+			}
+		}
+		img{
+			padding-right: 17px;
+		}
+		&:hover{
+			border: 1px solid var(--primary);
+			// background: var(--primary);
+			// color: #fff;
+		  }
+	}
+	.cmn-btn {
+	
+		color: $white;
+		background:var(--primary);
+		font-family: var(--heading-font);
+		padding:24px 25px;
+		font-size: 16px;
+		font-weight: 500;
+		border-radius: 0px;
+		line-height: 1;
+		text-align: center;
+		
+		cursor: pointer;
+		display: inline-block;
+		-moz-user-select: none;
+		line-height: 0;
+		margin-bottom: 0;
+		cursor: pointer;
+		transition: color 0.4s linear;
+		position: relative;
+		z-index: 1;
+		border: 0;
+		overflow: hidden;
+		.icon {
+			font-size: 11px;
+			@include transition(.3s);
+			transform: rotate(45deg);
+			display: inline-block;
+			position: relative;
+			left: 0;
+		}
+		&::before{
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 101%;
+			height: 101%;
+			background:var(--heading-color);
+			z-index: 1;
+			border-radius: 5px;
+			transition: transform 0.5s;
+			transition-timing-function: ease;
+			transform-origin: 0 0;
+			transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+			// 
+			transform: scaleX(0);
+			border-radius: 0px;
+		}
+		&:hover{
+			color:$white !important;
+			&::before {
+				transform: scaleX(1);
+				z-index: -1;
+			}
+			&::after{
+				background:var(--primary);
+			}
+			.icon {
+				left: 3px;
+			}
+		}
+		&.cmn-btns{
+			background: var(--paragraph-color);
+			&:hover{
+				color:$white !important;
+				
+				&::before{
+					background:var(--primary);
+				}
+				.icon {
+					left: 3px;
+				}
+			}
+		}
+	}
+	.cmn-btn1{
+		font-family: var(--heading-font);
+		@include transition(.4s);
+		border: 1px solid transparent;
+		background:var(--primary);
+		color: var(--white);
+		padding: 13px 24px;
+		font-size: 16px;
+		font-weight: 500;
+		display: inline-block;
+		border-radius: 8px;
+		text-align: center;
+		text-transform: capitalize;
+		.icon {
+			@include transition(.3s);
+			margin-right:5px;
+			font-size: 16px;
+			line-height: 1;
+			position: relative;
+			bottom: -3px;
+		}
+		&:hover{
+			background:none;
+			border: 1px solid var(--primary);
+			color: var(--primary);
+			.icon {
+				color: var(--primary);
+			}
+		}
+		&:focus{
+			background: var(--primary);
+			color: var(--white);
+		}
+	}
+	.cmn-btn-outline0{
+		@include transition(.4s);
+		font-family: var(--heading-font);
+		border: 1px solid #D0D5DD;
+		color:  var(--paragraph-color-one);
+		font-size: 15px;
+		font-weight: 500;
+		padding: 13px 15px !important;
+		@include align-items(center);
+		border-radius: 30px;
+		background: none;
+		display: inline-block;
+		.icon {
+			font-size: 11px;
+			@include transition(.3s);
+			display: inline-block;
+			margin-right: 8px;
+		}
+		img{
+			width: 17px;
+		}
+		&:hover{
+			border-color: var(--primary);
+			color: var(--primary);
+			.icon {
+				// margin-right: 8px;
+			}
+		}
+	}
+	.cmn-btn-outline1{
+		font-family: var(--heading-font);
+		border: 1px solid var(--border-color-one);
+		color:  var(--paragraph-color-one);
+		font-size: 15px;
+		font-weight: 500;
+		text-transform: normal;
+		padding:14px 15px !important;
+		@include align-items(center);
+
+		-moz-user-select: none;
+		cursor: pointer;
+		display: inline-block;
+		position: relative;
+		transition: color 0.4s linear;
+		position: relative;
+		overflow: hidden;
+		border-radius: 30px;
+		background: none;
+		z-index: 1;
+		width: 100%;
+		text-align: center;
+		.icon {
+			font-size: 11px;
+			@include transition(.3s);
+			transform: rotate(45deg);
+			display: inline-block;
+			position: relative;
+			left: 0;
+		}
+		&::before{
+			border: 1px solid transparent;
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 101%;
+			height: 101%;
+			background: var(--primary);
+			// @extend %btn-bgs;
+			z-index: -1;
+			transition: transform 0.5s;
+			transition-timing-function: ease;
+			transform-origin: 0 0;
+			transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+			// 
+			transform: scaleX(0);
+			border-radius: 0;
+		}
+		&:hover{
+			color: var(--heading-color);
+			&::before {
+				transform: scaleX(1);
+				border: 1px solid transparent;
+			}
+			.icon {
+				left: 3px;
+			}
+		}
+	}
+
+	.border-btn{
+		border: 1px solid var(--primary);
+		color:var(--primary);
+		text-transform: normal;
+		padding: 11px 15px !important;
+		-moz-user-select: none;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 14px;
+		font-weight: 500;
+		letter-spacing: 1px;
+		position: relative;
+		transition: color 0.4s linear;
+		position: relative;
+		overflow: hidden;
+		border-radius: 30px;
+		background: none;
+		z-index: 1;
+		.icon {
+			font-size: 11px;
+			@include transition(.3s);
+			transform: rotate(45deg);
+			display: inline-block;
+			position: relative;
+			left: 0;
+		}
+		&::before{
+			border: 1px solid transparent;
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 101%;
+			height: 101%;
+			background:var(--primary);
+			// @extend %btn-bgs;
+			z-index: -1;
+			transition: transform 0.5s;
+			transition-timing-function: ease;
+			transform-origin: 0 0;
+			transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+			// 
+			transform: scaleX(0);
+			border-radius: 0;
+		}
+		&:hover{
+			color: var(--heading-color);
+			&::before {
+				transform: scaleX(1);
+				border: 1px solid transparent;
+			}
+			.icon {
+				left: 3px;
+			}
+		}
+		&.border-btn2{
+			border: 1px solid var(--secondary) !important;
+			color: var(--secondary) !important;
+			padding: 11px 27px !important;
+			font-weight: 500;
+			&::before {
+				background: var(--secondary) !important;
+			}
+			&:hover{
+				// color:var(--primary);
+				border: 1px solid var(--secondary)  !important;
+				color: $white !important;
+			}
+		}
+
+		&.border-btn3{
+			padding: 8px 28px !important;
+			border-radius: 5px;
+		}
+		
+	}
+
+	.cmn-btn-outline1{
+		font-family: var(--heading-font);
+		border: 1px solid $border-color;
+		color:var(--paragraph-color-one);
+		font-size: 15px;
+		font-weight: 500;
+		text-transform: normal;
+		padding:14px 15px !important;
+		@include align-items(center);
+
+		-moz-user-select: none;
+		cursor: pointer;
+		display: inline-block;
+		position: relative;
+		transition: color 0.4s linear;
+		position: relative;
+		overflow: hidden;
+		border-radius: 0px;
+		background: none;
+		z-index: 1;
+		width: 100%;
+		text-align: center;
+		.icon {
+			font-size: 11px;
+			@include transition(.3s);
+			transform: rotate(45deg);
+			display: inline-block;
+			position: relative;
+			left: 0;
+		}
+		&::before{
+			border: 1px solid transparent;
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 101%;
+			height: 101%;
+			background: var(--primary);
+			// @extend %btn-bgs;
+			z-index: -1;
+			transition: transform 0.5s;
+			transition-timing-function: ease;
+			transform-origin: 0 0;
+			transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+			// 
+			transform: scaleX(0);
+			border-radius: 0;
+		}
+		&:hover{
+			color: $white;
+			&::before {
+				transform: scaleX(1);
+				border: 1px solid transparent;
+			}
+			.icon {
+				left: 3px;
+			}
+		}
+	}
+	.cmn-btn-outline2{
+		font-family: var(--heading-font);
+		border: 1px solid $border-color;
+		color:var(--paragraph-color-one);
+		font-size: 15px;
+		font-weight: 500;
+		text-transform: normal;
+		padding:14px 15px !important;
+		@include align-items(center);
+
+		-moz-user-select: none;
+		cursor: pointer;
+		display: inline-block;
+		position: relative;
+		transition: color 0.4s linear;
+		position: relative;
+		overflow: hidden;
+		border-radius: 0px;
+		background: none;
+		z-index: 1;
+		.icon {
+			font-size: 18px;
+			margin-right: 6px;
+		}
+		&::before{
+			border: 1px solid transparent;
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 101%;
+			height: 101%;
+			background: var(--primary);
+			// @extend %btn-bgs;
+			z-index: -1;
+			transition: transform 0.5s;
+			transition-timing-function: ease;
+			transform-origin: 0 0;
+			transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+			// 
+			transform: scaleX(0);
+			border-radius: 0;
+		}
+		&:hover{
+			color: $white;
+			&::before {
+				transform: scaleX(1);
+				border: 1px solid transparent;
+			}
+		}
+	}
+	.cmn-btn-outline3{
+		font-family: var(--heading-font);
+		border: 1px solid var(--primary);
+		color: var(--primary);
+		font-size: 15px;
+		font-weight: 500;
+		text-transform: normal;
+		padding: 14px 29px !important;
+		@include align-items(center);
+		text-align: center;
+		
+		-moz-user-select: none;
+		cursor: pointer;
+		display: inline-block;
+		position: relative;
+		transition: color 0.4s linear;
+		position: relative;
+		overflow: hidden;
+		border-radius: 0px;
+		background: none;
+		z-index: 1;
+		.icon {
+			font-size: 18px;
+			margin-right: 6px;
+		}
+		&::before{
+			border: 1px solid transparent;
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 101%;
+			height: 101%;
+			background: var(--primary);
+			// @extend %btn-bgs;
+			z-index: -1;
+			transition: transform 0.5s;
+			transition-timing-function: ease;
+			transform-origin: 0 0;
+			transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+			// 
+			transform: scaleX(0);
+			border-radius: 0;
+		}
+		&:hover{
+			color: $white;
+			&::before {
+				transform: scaleX(1);
+				border: 1px solid transparent;
+			}
+		}
+	}

@@ -1,0 +1,428 @@
+.multiStep-footer {
+    padding-top: 30px;
+    .multiStep-footer-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 25px 10px;
+    }
+    .multiStep-footer-back {
+        background-color: #aeaeae;
+        padding: 10px 30px;
+        color:#fff;
+        border-radius: 30px;
+        @include transition(.3s);
+        font-size: 16px;
+        font-weight: 500;
+        &:hover {
+            background-color: var(--primary);
+            color: $white;
+        }
+    }
+    .multiStep-footer-next {
+        border: 1px solid transparent;
+        background: var(--primary);
+        color: var(--white);
+        font-size: 16px;
+        font-weight: 500;
+        display: inline-block;
+        text-align: center;
+        text-transform: capitalize;
+        padding: 10px 30px;
+        border-radius: 30px;
+        &:focus {
+            color: $white;
+        }
+    }
+}
+@keyframes multiStepForm {
+    from {
+        transform: scale(.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.multiStep-wrapper {
+    .multiStep-wrapper-flex{
+        display: flex;
+        gap: 50px 0;
+        @media #{$xs-to-lg-max}{
+            display: grid;
+        }
+    }
+    .multiStep-wrapper-left {
+        min-width: 318px;
+        margin-right: 50px;
+        position: relative;
+        background-color: var(--white);
+        padding: 30px 50px 0 25px;
+        box-shadow: rgba(0,0,0,0.08) 0px 4px 12px;
+        @media #{$xs-to-lg-max}{
+            margin-right: 0px;
+        }
+        @media #{$xs-to-md-max}{
+            min-width: 290px;
+        }
+        @include responsive(allPhone) {
+            padding-right: 0;
+            margin-right: 0;
+            max-width: 100%;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            height:100%;
+            width: 1px;
+            right: 0;
+            top: 0px;
+            background-color: #f3f3f3;
+            @include responsive(allPhone) {
+                display: none;
+            }
+        }
+    }
+    .multiStep-wrapper-contents {
+        display: none;
+        &.active {
+            display: block;
+            animation: multiStepForm .3s linear;
+        }
+        .multiStep-wrapper-contents-item {
+            &:not(:last-child) {
+                margin-bottom: 40px;
+            }
+            &-flex {
+                display: flex;
+                align-items: flex-start;
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+.step-list-wrapper {
+    .single-step-list-step{
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 20px;
+        background-color: $white;
+        padding-bottom: 40px;
+        @include responsive(xxs) {
+            flex-basis: 100%;
+        }
+        @include responsive(vxxs) {
+            gap: 10px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            top: 35px;
+            left: 17px;
+            background: #f3f3f3;
+            z-index: 0;
+          }
+        &.completed {
+            &::before {
+                background-color: #65C18C;
+            }
+        }
+        &:last-child {
+            &::before {
+                display: none;
+            }
+        }
+        &.completed {
+            .single-multiStep-request-list-item-number{
+                border-color: #65C18C;
+                color: $white;
+                &::before {
+                    background-color: #65C18C;
+                    content: "\f00c";
+                    font-family: 'Line Awesome Free';
+                    z-index: 9;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 12px;
+                    font-weight: 600;
+                }
+            }
+        }
+        &.current-items {
+            .single-multiStep-request-list-item-number{
+                border-color: var(--primary);
+                color: $white;
+                &::before {
+                    background-color: var(--primary);
+                }
+            }
+        }
+        .single-multiStep-request-list-item-number{
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+            border-radius: 50%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            height: 35px;
+            width: 35px;
+            color: #222;
+            font-size: 16px;
+            font-weight: 500;
+            border: 1px solid #f3f3f3;
+            background-color: unset;
+            @include responsive(allPhone) {
+                background-color: #fff;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                height: calc(100% - 10px);
+                width: calc(100% - 10px);
+                top: 5px;
+                left: 5px;
+                background-color: $white;
+                border-radius: 50%;
+                z-index: -1;
+            }
+        }
+        .single-step-list-contents {
+            flex: 1;
+            .title {
+                font-size: 22px;
+                font-weight: 600;
+                color: var(--heading-color-two);
+            }
+        }
+    }
+}
+.account-multiStep-wrapper {
+    background-color: $white;
+    padding: 20px;
+    border-radius: 10px;
+    .multiStep-wrapper-contents {
+        max-width: 100%;
+    }
+}
+
+// Check Box
+.multiStep-wrapper .check-wrap{
+    &.style-eight{
+        input[type="checkbox"] { display: none; }
+        input[type="checkbox"] + label {
+            position: relative;
+            font-size: 1rem;
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--border-color-one);
+            border-radius: 50%;
+            transition: all ease-out 200ms;
+            text-indent: 30px;
+            white-space: nowrap;
+            color: var(--heading-color-one);
+            user-select: none;
+            background: transparent;
+            line-height: 1;
+            cursor: pointer;
+            text-transform: capitalize;
+            &:after {
+            content: "";
+            position: absolute;
+            width: 0px;
+            height: 6px;
+            border-bottom: 2px solid var(--white);
+            border-left: 2px solid var(--white);
+            top: 43%;
+            left: 40%;
+            transform-origin: bottom left;
+            transform: rotate(-45deg);
+            opacity: 0;
+            transition: all ease-out 200ms;
+            }
+        }
+
+        input[type="checkbox"]:checked + label {
+        border: 1px solid transparent;
+        background: var(--primary);
+        color: var(--primary);
+        &:after {
+            opacity: 1;
+            width: 11px;
+        }
+        }
+    }
+}
+
+// Form
+.multiStep-form{
+    .input-form{
+        position: relative;
+        &.iconStyle{
+            input{
+                padding:9px 18px 9px 52px;
+            }
+            .icon{
+                color: var(--paragraph-color-one);
+                position: absolute;
+                left: 13px;
+                top: 21%;
+                text-align: center;
+                line-height: 17px;
+                font-size: 23px;
+            }
+        }
+        input{
+            background: none;
+            color: var(--heading-color);
+            height: 50px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 300;
+            padding:  9px 18px 9px 20px; 
+            position: relative;
+            border: 1px solid #EAECF0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            &::placeholder {
+                color:var(--heading-color);
+                font-size: 16px;
+                font-weight: 400;
+                @media #{$md}{
+                    font-size: 13px;
+                }
+                @media #{$xs}{
+                    font-size: 13px;
+                }
+            }
+        }
+
+    }
+    textarea {
+        background: none;
+        color: var(--heading-color);
+        height: 120px;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 300;
+        padding: 15px 18px 9px 20px;
+        position: relative;
+        border: 1px solid #EAECF0;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    .select-StyleTwo{
+        position: relative;
+        .icon{
+            position: absolute;
+            left: 15px;
+            display: inline-block;
+            top: 17px;
+            font-size: 24px;
+        }
+        .nice-select {
+            border: 1px solid #dddd;
+            width: 100%;
+            height: 50px;
+            background: #fff;
+            border-radius: 0px;
+            padding: 11px 19px 11px 19px;
+            color: #ddd;
+            margin-bottom: 16px;
+            line-height: 24px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        .list {
+                width: 100%;
+            }
+            &.open .list {
+                width: 100%;
+                border-radius: 0;
+                border: 0;
+            }
+            &::after {
+                border-bottom: 2px solid #76787A;
+                border-right: 2px solid #76787A;
+                height: 9px;
+                width: 9px;
+                margin-top: -8px;
+                right: 29px;
+            }
+            .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
+                background-color: var(--primary);
+                color:white;
+            }
+        }
+    }
+
+    // Check Mark
+    .check-wrap{
+        .style-eight{
+            input[type="checkbox"] { display: none; }
+            input[type="checkbox"] + label {
+                position: relative;
+                font-size: 14px;
+                width: 20px;
+                height: 20px;
+                border: 1px solid var(--border-color-one);
+                border-radius: 50%;
+                transition: all ease-out 200ms;
+                text-indent: 30px;
+                white-space: nowrap;
+                color: var(--border-color-one);
+                user-select: none;
+                background: transparent;
+                line-height: 1;
+                cursor: pointer;
+
+                &:after {
+                content: "";
+                position: absolute;
+                width: 0px;
+                height: 6px;
+                border-bottom: 2px solid var(--white);
+                border-left: 2px solid var(--white);
+                top: 43%;
+                left: 40%;
+                transform-origin: bottom left;
+                transform: rotate(-45deg);
+                opacity: 0;
+                transition: all ease-out 200ms;
+                }
+            }
+
+            input[type="checkbox"]:checked + label {
+            border: 1px solid transparent;
+            background: var(--primary);
+            color: var(--primary);
+            &:after {
+                opacity: 1;
+                width: 11px;
+            }
+            }
+        }
+    }
+
+    .cmn-btn1{
+        border-radius: 8px;
+    }
+    .cmn-btn-outline0{
+        border-radius: 8px;
+    }
+}

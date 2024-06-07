@@ -1,0 +1,39 @@
+/*-----------------------------------------------------------------------------------
+
+    :: @version        : 1.0.0
+    :: Template Name   : initForm - MultiPurpose HTML form with authentication, chat-box, payment, Multi-step Form, subscribe, contact etc.
+    :: Template author : https://themeforest.net/user/inittheme
+
+-----------------------------------------------------------------------------------*/
+
+// Global SCSS
+    @import "global/mixins";
+    @import "global/variables";
+    @import "global/global";
+    @import "global/button";
+    @import "global/animation";
+
+// Demo Default
+    @import "pages/select2";
+    @import "pages/feature";
+    @import "pages/demo";
+    @import "pages/button";
+
+// layout
+    @import "layout/header";
+    @import "layout/footer";
+    @import "layout/hero";
+  
+// Pages
+    @import "pages/authentication_form";
+    @import "pages/login-register";
+    @import "pages/multi-step-form";
+    @import "pages/contact-form";
+    @import "pages/subscribe-search";
+    // ChatBox
+    @import "pages/chatbox-style-one";
+    @import "pages/chatbox-style-two";
+    // Payment Form
+    @import "pages/payment-style-one";
+    @import "pages/payment-style-two";
+    @import "pages/payment-style-three";

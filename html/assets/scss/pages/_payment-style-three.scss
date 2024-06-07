@@ -1,0 +1,199 @@
+// Payment Three
+.payment-style-three{
+    .paymentDetails{
+        // Single 
+        .paymentDetailsTop{
+            border-bottom: 1px solid var(--border-color-one);
+            .listing{
+                .listItem{
+                    @include flexbox();
+                    @include align-items(center);
+                    font-family: var(--heading-font);
+                    color: var(--paragraph-color-one);
+                    margin-bottom: 22px;
+                    font-size: 16px;
+                    &:last-child{
+                        margin-bottom: 30px;
+                    }
+                    .icon{
+                        color:#4CAF50;
+                        margin-right: 15px;
+                        font-weight: 700;
+                    }
+                    .priceTag{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        // Bottom 
+        .paymentDetailsBottom{
+            .input-form{
+                position: relative;
+                input{
+                    background: none;
+                    color: var(--heading-color-one);
+                    height: 50px;
+                    width: 100%;
+                    font-size: 16px;
+                    font-weight: 300;
+                    padding: 9px 18px 9px 52px;
+                    position: relative;
+                    border: 1px solid #EAECF0;
+                    border-radius: 8px;
+                    margin-bottom: 20px;
+                    &::placeholder {
+                        color:var(--heading-color-one);
+                        font-size: 16px;
+                        font-weight: 400;
+                        @media #{$md}{
+                            font-size: 13px;
+                        }
+                        @media #{$xs}{
+                            font-size: 13px;
+                        }
+                    }
+                }
+                .icon{
+                    color: var(--paragraph-color-one) ;
+                    position: absolute;
+                    left: 13px;
+                    top: 13px;
+                    text-align: center;
+                    line-height: 17px;
+                    font-size: 23px;
+                }
+            }
+            // Payment Method
+            .paymentMethod{
+                padding-bottom: 20px;
+                .radio {
+                    display: inline-block;
+                }
+                .radio input[type="radio"] + .radio-label:before {
+                    top: 4px;
+                }
+                .radio {
+                    margin-right: 5px;
+                    margin-bottom: 13px;
+                    display: inline-block;
+                    input[type="radio"] {
+                        position: absolute;
+                        opacity: 0;
+                        + .radio-label {
+                            &:before {
+                                content: '';
+                                border-radius: 100%;
+                                display: inline-block;
+                                width: 20px;
+                                height: 20px;
+                                position: relative;
+                                top: 5px;
+                                margin-right: 8px;
+                                vertical-align: top;
+                                cursor: pointer;
+                                text-align: center;
+                                transition: all 250ms ease;
+                                background: #fff;
+                                border: 1px solid var(--border-color-one);
+                            }
+                        }
+                        &:checked {
+                            + .radio-label {
+                                &:before {
+                                    box-shadow: inset 0 0 0 4px $white;
+                                    background: var(--primary);
+                                    border: 1px solid var(--primary);
+                                }
+                            }
+                        }
+                        &:focus {
+                            + .radio-label {
+                                &:before {
+                                    outline: none;
+                                }
+                            }
+                        }
+                        + .radio-label {
+                            &:empty {
+                                &:before {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                    }
+                    label {
+                        display: inline-block;
+                        font-size: 16px;
+                        color: var(--paragraph-color-one);
+                        cursor: pointer;
+                        margin-right: 10px;
+                    }
+                    .icon{
+                        color: var(--paragraph-color-one);
+                        margin-right: 10px;
+                        font-size: 24px;
+                        position: relative;
+                        top: 3px;
+                    }
+                }
+            }
+        }
+    }
+    // audience
+    .audience{
+        .listing{
+            .listItem{
+                @include flexbox();
+                @include justify-content(space-between);
+                margin-bottom: 21px;
+                border-bottom: 1px solid #ddd;
+                &:last-child{
+                    border-bottom: 0;
+                    margin-bottom: 0;
+                }
+                .leftCap{
+                    font-family: var(--heading-font);;
+                    font-size: 16px;
+                    color:var(--paragraph-color-one);
+                    display: block;
+                }
+                .rightCap{
+                    font-family: var(--heading-font);;
+                    font-size: 16px;
+                    color:var(--heading-color);
+                    display: block;
+                }
+            }
+        }
+    }
+    //paymentPricing
+    .paymentPricing{
+        .listing{
+            .listItem{
+                @include flexbox();
+                @include justify-content(space-between);
+                margin-bottom: 21px;
+                border-bottom: 1px solid #ddd;
+                &:last-child{
+                    border-bottom: 0;
+                    margin-bottom: 0;
+                }
+                .leftCap{
+                    font-family: var(--heading-font);;
+                    font-size: 16px;
+                    color:var(--paragraph-color-one);
+                    display: block;
+                }
+                .rightCap{
+                    font-family: var(--heading-font);;
+                    font-size: 16px;
+                    color:var(--heading-color);
+                    display: block;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
