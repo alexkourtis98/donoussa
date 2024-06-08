@@ -1,82 +1,132 @@
 [
     {
         "title": "Parsley",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Parsley.jpg/1024px-Parsley.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Parsley.jpg/1024px-Parsley.jpg",
+        "color": "white"
     },
     {
         "title": "Dill",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dill.jpg/800px-Dill.jpg?20090712183849"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dill.jpg/800px-Dill.jpg?20090712183849",
+        "color": "white"
     },
     {
         "title": "Mint",
-        "image": "https://st2.depositphotos.com/1000561/11241/i/450/depositphotos_112419968-stock-photo-mint-leaf-close-up.jpg"
+        "image": "https://st2.depositphotos.com/1000561/11241/i/450/depositphotos_112419968-stock-photo-mint-leaf-close-up.jpg",
+        "color": "white"
     },
     {
         "title": "Tomato Sauce",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/Tomato_sauce.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Tomato_sauce_in_a_bowl.jpg/800px-Tomato_sauce_in_a_bowl.jpg",
+        "color": "white"
     },
     {
         "title": "Tomato Paste",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/Tomato_paste.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tomato_paste.jpg/800px-Tomato_paste.jpg",
+        "color": "white"
     },
     {
         "title": "Greek Olives",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Assorted_olives.jpg/800px-Assorted_olives.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Greek_Olives.jpg/800px-Greek_Olives.jpg",
+        "color": "white"
     },
     {
         "title": "Olive Oil",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Olio_di_oliva.jpg/800px-Olio_di_oliva.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Olive_oil.jpg/800px-Olive_oil.jpg",
+        "color": "white"
     },
     {
         "title": "Sunflower Oil",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Sunflower_oil.jpg/800px-Sunflower_oil.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Sunflower_oil.jpg/800px-Sunflower_oil.jpg",
+        "color": "white"
     },
     {
         "title": "Green Peppers",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Capsicum_annuum_green.jpg/800px-Capsicum_annuum_green.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Green_peppers.jpg/800px-Green_peppers.jpg",
+        "color": "white"
     },
     {
         "title": "Onions",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Onions.jpg/800px-Onions.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Onions.jpg/800px-Onions.jpg",
+        "color": "white"
     },
     {
         "title": "Tomatoes",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tomato_je.jpg/800px-Tomato_je.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Tomatoes_on_vine.jpg/800px-Tomatoes_on_vine.jpg",
+        "color": "white"
     },
     {
         "title": "Cucumbers",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Cucumis_sativus.JPG/800px-Cucumis_sativus.JPG"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Cucumbers.jpg/800px-Cucumbers.jpg",
+        "color": "white"
     },
     {
         "title": "Goat Cheese",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Ch%C3%A8vre.jpg/800px-Ch%C3%A8vre.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Goat_cheese.jpg/800px-Goat_cheese.jpg",
+        "color": "white"
     },
     {
         "title": "Feta Cheese",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Feta_01.jpg/800px-Feta_01.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Feta_cheese.jpg/800px-Feta_cheese.jpg",
+        "color": "white"
     },
     {
         "title": "Graviera Cheese",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Graviera_cheese.jpg/800px-Graviera_cheese.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Graviera.jpg/800px-Graviera.jpg",
+        "color": "white"
     },
     {
         "title": "Pasta No.6",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Spaghetti.jpg/800px-Spaghetti.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Pasta_no_6.jpg/800px-Pasta_no_6.jpg",
+        "color": "white"
     },
     {
         "title": "Black Pepper",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Black_pepper.jpg/800px-Black_pepper.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Black_pepper.jpg/800px-Black_pepper.jpg",
+        "color": "white"
     },
     {
         "title": "Salt",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Salt_shaker_on_black_background.jpg/800px-Salt_shaker_on_black_background.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Salt.jpg/800px-Salt.jpg",
+        "color": "white"
     },
     {
         "title": "Sea Salt",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Sea_salt_mound.jpg/800px-Sea_salt_mound.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Sea_salt.jpg/800px-Sea_salt.jpg",
+        "color": "white"
     },
     {
         "title": "Cumin",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Cumin_BM_2.jpg/800px-Cumin_BM_2.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Cumin.jpg/800px-Cumin.jpg",
+        "color": "white"
+    },
+    {
+        "title": "Oregano",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Origanum_vulgare_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-1887.jpg/800px-Origanum_vulgare_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-1887.jpg",
+        "color": "white"
+    },
+    {
+        "title": "Basil",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Basil_Brown.JPG/800px-Basil_Brown.JPG",
+        "color": "white"
+    },
+    {
+        "title": "Rosemary",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Rosemary.jpg/800px-Rosemary.jpg",
+        "color": "white"
+    },
+    {
+        "title": "Thyme",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Thymus_vulgaris.jpg/800px-Thymus_vulgaris.jpg",
+        "color": "white"
+    },
+    {
+        "title": "Lemon",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Lemon_2019-12-17.jpg/800px-Lemon_2019-12-17.jpg",
+        "color": "white"
+    },
+    {
+        "title": "Garlic",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Knoblauchzehen_in_Oliven%C3%B6l_%28cropped%29.jpg/800px-Knoblauchzehen_in_Oliven%C3%B6l_%28cropped%29.jpg",
+        "color": "white"
     }
 ]

@@ -65,7 +65,7 @@
                 margin: 20px 0;
             }
 
-            #search-input {
+            #searchInput {
                 width: 100%;
                 padding: 10px;
                 font-size: 16px;
@@ -78,7 +78,6 @@
             }
 
             .card {
-                width: 200px;
                 border: 1px solid #ccc;
                 border-radius: 10px;
                 padding: 10px;
@@ -205,7 +204,7 @@
             <!-- End-of slider -->
             <!-- Contact Form S a r t-->
             <div class="contact-form section-padding section-bg-one">
-                <div class="container">
+                <div class="container-fluid p-5">
                     <div class="row">
                         <div class="col">
                             <div
@@ -227,9 +226,9 @@
                                                         Use the search bar below to find specific products in our inventory.
                                                     </p>
                                                     <div class="search-container">
-                                                        <input type="text" id="search-input" placeholder="Search for products here..." onkeyup="searchFunction()"/>
+                                                        <input type="text" id="searchInput" placeholder="Search for products here..." onkeyup="searchFunction()"/>
                                                     </div>
-                                                    <div class="card-container" id="card-container"></div>
+                                                    <div class="container-fluid row " id="card-container"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -271,43 +270,112 @@
         <script src="assets/js/mian.js"></script>
 
         <script>
-            const colors = ["none", "blue", "red"];
+            let items = [];
+            const colors = ["white", "blue", "red"];
 
-            function changeColor(card) {
-                let currentColor = card.dataset.colorIndex || 0;
-                currentColor = (parseInt(currentColor) + 1) % colors.length;
-                card.style.backgroundColor = colors[currentColor] === "none" ? "" : colors[currentColor];
-                card.style.borderColor = colors[currentColor] === "none" ? "" : colors[currentColor];
-                card.dataset.colorIndex = currentColor;
+            document.addEventListener("DOMContentLoaded", function () {
+                fetch('./items.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        items = data;
+
+                        // Add color classes from local storage to relevant items
+                        applyColorClassesFromLocalStorage(items);
+
+                        // Sort items based on color
+                        prioritizeRedCards(items);
+                        // Display the cards
+                        displayCards(items);
+                    })
+                    .catch(error => {
+                        console.error('Error loading JSON:', error);
+                    });
+            });
+
+            function applyColorClassesFromLocalStorage(items) {
+                const colorClasses = JSON.parse(localStorage.getItem('colorClasses'));
+                if (colorClasses) {
+                    items.forEach(item => {
+                        const storedColor = colorClasses[item.title];
+                        if (storedColor) {
+                            item.color = storedColor;
+                        }
+                    });
+                }
             }
 
-            fetch('items.json')
-                .then(response => response.json())
-                .then(data => {
-                    const container = document.getElementById('card-container');
-                    data.forEach(item => {
-                        const card = document.createElement('div');
-                        card.className = 'card';
-                        card.dataset.title = item.title;
-                        card.onclick = () => changeColor(card);
+            function prioritizeRedCards(items) {
+                items.sort((a, b) => (a.color === 'red' ? -1 : 1));
+            }
 
-                        const img = document.createElement('img');
-                        img.src = item.image;
-                        img.alt = item.title;
+            function displayCards(items) {
+                const container = document.getElementById('card-container');
+                container.innerHTML = '';
+                items.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'card col-lg-2 m-4';
+                    card.dataset.title = item.title;
+                    card.style.backgroundColor = item.color;
+                    card.style.borderColor = item.color;
+                    card.innerHTML = `
+                                                                                                                                                    <img src="` + item.image + ` alt="` + item.title + `>
+                                                                                                                                                    <h3>` + item.title + `</h3>
+                                                                                                                                                `;
 
-                        const title = document.createElement('h3');
-                        title.textContent = item.title;
-
-                        card.appendChild(img);
-                        card.appendChild(title);
-                        container.appendChild(card);
+                    card.addEventListener('click', function () {
+                        changeColor(card, item); // Add changeColor function here
                     });
-                })
-                .catch(error => {
-                    console.error('Error loading JSON:', error);
+                    container.appendChild(card);
                 });
-        </script>
+            }
 
+            function changeColor(card, item) {
+                if (card.style.backgroundColor === 'red') {
+                    if (!confirm('Are you sure you want to reset the color?')) {
+                        return; // If user cancels, exit the function
+                    }
+                }
+                const currentColor = card.style.backgroundColor;
+                const nextColor = getNextColor(currentColor);
+                card.style.backgroundColor = nextColor;
+                card.style.borderColor = nextColor;
+
+                // Update color in local storage
+                const colorClasses = JSON.parse(localStorage.getItem('colorClasses')) || {};
+                colorClasses[item.title] = nextColor;
+                localStorage.setItem('colorClasses', JSON.stringify(colorClasses));
+
+                // Update color in item object
+                item.color = nextColor;
+
+                // Sort items based on color
+                prioritizeRedCards(items);
+                // Re-display the cards
+                displayCards(items);
+            }
+
+            function getNextColor(currentColor) {
+                const colors = ["white", "blue", "red"];
+                const currentIndex = colors.indexOf(currentColor);
+                const nextIndex = (currentIndex + 1) % colors.length;
+                return colors[nextIndex];
+            }
+
+            function searchFunction() {
+                const input = document.getElementById('searchInput');
+                const filter = input.value.toLowerCase();
+                const cards = document.querySelectorAll('.card');
+
+                cards.forEach(card => {
+                    const title = card.dataset.title.toLowerCase();
+                    if (title.includes(filter)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        </script>
     </body>
 </html>
  
