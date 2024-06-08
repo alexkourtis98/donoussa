@@ -64,19 +64,19 @@
             .search-container {
                 margin: 20px 0;
             }
-    
+
             #search-input {
                 width: 100%;
                 padding: 10px;
                 font-size: 16px;
             }
-    
+
             .card-container {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 20px;
             }
-    
+
             .card {
                 width: 200px;
                 border: 1px solid #ccc;
@@ -87,13 +87,13 @@
                 cursor: pointer;
                 transition: background-color 0.3s, border-color 0.3s;
             }
-    
+
             .card img {
                 width: 100%;
                 height: auto;
                 border-radius: 10px;
             }
-    
+
             .card h3 {
                 margin-top: 10px;
                 font-size: 18px;
@@ -220,27 +220,16 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="section-tittle-one mb-25">
-                                                 <h3 class="title font-size-25 heading-color-two">
-    Search for products here
-</h3>
-<p>
-    Use the search bar below to find specific products in our inventory.
-</p>
-<div class="search-container">
-    <input type="text" id="search-input" placeholder="Search for products here..." onkeyup="searchFunction()" />
-</div>
-<div class="card-container" id="card-container">
-    <div class="card" data-title="Parsley" onclick="changeColor(this)">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Parsley.jpg/1024px-Parsley.jpg" alt="Parsley">
-        <h3>Parsley</h3>
-    </div>
-        <div class="card" data-title="Dill" onclick="changeColor(this)">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dill.jpg/800px-Dill.jpg?20090712183849" alt="Dill">
-        <h3>Dill</h3>
-    </div>
-    <!-- Add more cards as needed -->
-</div>
-
+                                                    <h3 class="title font-size-25 heading-color-two">
+                                                        Search for products here
+                                                    </h3>
+                                                    <p>
+                                                        Use the search bar below to find specific products in our inventory.
+                                                    </p>
+                                                    <div class="search-container">
+                                                        <input type="text" id="search-input" placeholder="Search for products here..." onkeyup="searchFunction()"/>
+                                                    </div>
+                                                    <div class="card-container" id="card-container"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -280,37 +269,45 @@
         <script src="assets/js/plugin.js"></script>
         <!-- Main js-->
         <script src="assets/js/mian.js"></script>
-        
+
         <script>
-             function searchFunction() {
-            var input, filter, cards, cardContainer, title, i;
-            input = document.getElementById("search-input");
-            filter = input.value.toLowerCase();
-            cardContainer = document.getElementById("card-container");
-            cards = cardContainer.getElementsByClassName("card");
+            const colors = ["none", "blue", "red"];
 
-            for (i = 0; i < cards.length; i++) {
-                title = cards[i].getAttribute("data-title");
-                if (title.toLowerCase().indexOf(filter) > -1) {
-                    cards[i].style.display = "";
-                } else {
-                    cards[i].style.display = "none";
-                }
-            }
-        }
-
-       let colors = ["none", "blue", "red"];
-
-             function changeColor(card) {
+            function changeColor(card) {
                 let currentColor = card.dataset.colorIndex || 0;
                 currentColor = (parseInt(currentColor) + 1) % colors.length;
                 card.style.backgroundColor = colors[currentColor] === "none" ? "" : colors[currentColor];
                 card.style.borderColor = colors[currentColor] === "none" ? "" : colors[currentColor];
                 card.dataset.colorIndex = currentColor;
             }
-            
-            </script>
-            
+
+            fetch('items.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('card-container');
+                    data.forEach(item => {
+                        const card = document.createElement('div');
+                        card.className = 'card';
+                        card.dataset.title = item.title;
+                        card.onclick = () => changeColor(card);
+
+                        const img = document.createElement('img');
+                        img.src = item.image;
+                        img.alt = item.title;
+
+                        const title = document.createElement('h3');
+                        title.textContent = item.title;
+
+                        card.appendChild(img);
+                        card.appendChild(title);
+                        container.appendChild(card);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading JSON:', error);
+                });
+        </script>
+
     </body>
 </html>
  
