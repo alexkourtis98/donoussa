@@ -318,9 +318,9 @@
                     card.style.backgroundColor = item.color;
                     card.style.borderColor = item.color;
                     card.innerHTML = `
-                                                                                                                                                    <img src="` + item.image + ` alt="` + item.title + `>
-                                                                                                                                                    <h3>` + item.title + `</h3>
-                                                                                                                                                `;
+                                                                                                                                                                <img src="` + item.image + `" alt="` + item.title + `">
+                                                                                                                                                                <h3>` + item.title + `</h3>
+                                                                                                                                                            `;
 
                     card.addEventListener('click', function () {
                         changeColor(card, item); // Add changeColor function here
