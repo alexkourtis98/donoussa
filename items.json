@@ -128,5 +128,130 @@
         "title": "Garlic",
         "image": "https://post.healthline.com/wp-content/uploads/2018/06/garlic-1296x728-header.jpg",
         "color": "white"
+    },
+    {
+        "title": "Potatoes",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "Tirokafteri",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "Tzatziki",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "Karamelomena kremmidia",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "fava",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "kapari",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "keftedakia",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "mpiftekia",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "mpalsamiko",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "mpalsamiko krema",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "tsatni ntomatas",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "saganaki",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "gavros marinatos",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "tomatinia",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "paximadi xaroupiou",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "moussaka",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "revithada",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "revithia",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "kimas",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "laxano",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "karoto",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "panseta",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "kolokithi",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "gigantes",
+        "image": "test",
+        "color": "white"
+    },
+    {
+        "title": "portokali",
+        "image": "test",
+        "color": "white"
     }
 ]
